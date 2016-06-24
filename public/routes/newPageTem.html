@@ -1,0 +1,77 @@
+<header-dir></header-dir>
+
+<!-- <user-list></user-list> -->
+
+  <div class="right-column-wrapper">
+
+
+  <div class="add-wrapper">
+<!-- {{user}}<br><br><br>
+{{saveArr}}<br><br><br>
+
+{{storyData}}<br><br><br> -->
+
+<!-- story {{storyRes}}<br><br><br>
+storyId_id {{storyId._id}}<br><br><br>
+storyId This is my response {{storyId}} <br><br><br>
+updatedStory {{updatedStory}} <br><br><br>
+storyName {{storyName}}  <br><br><br>
+
+Actual Formatting Effort Below <br><br><br> -->
+
+  <div class="add-input-container">
+
+  <input class="add-input-box" placeholder="Please Name Your Page" ng-model="storyName.name" ng-hide="toggleTab"></input>
+  <button class="add-input-button" ng-click="addStory(storyName)" ng-hide="toggleTab">
+    <div>
+      <span class="new-display-description">Create Page</span>
+    </div>
+  </button>
+
+  <h1 class="new-page-mainname">{{storyRes.name}}<h1>
+
+    <div ng-show="toggleTab">
+    <select class="select-cat" ng-model="addOptions.name" ng-show="toggleTab">
+      <option ng-repeat="cat in category" value="{{cat._id}}">
+        {{cat.name}}
+      </option>
+  </select>
+  <button class="new-page-submit" ng-click="addCat()">Add to Category</button>
+ </div>
+
+  <!-- <div ng-show="toggleTab">
+    <button ng-click="toggleDrop()">Down Arrow</button>
+    <div ng-repeat="cat in category" ng-show="toggleDropDown">
+      <button ng-click="toggleSelection(cat._id)">{{cat.name}}</button>
+    </div>
+  </div>
+  <button ng-click="addCat()">Add to Category</button>
+{{selection}} -->
+
+  <div class="repeat-wrapper-pages" ng-show="toggleDisplay">
+  <div ng-repeat="update in updatedStory.body track by $index">
+    <br>
+    <h2 class="page-subname">{{update.title}}<h2>
+    <hr>
+    <!-- <text-area-dir index="$index"></text-area-dir> -->
+
+    <p class="page-textdisplay" ta-bind ng-model="update.text">
+    </div> <br>
+  </div>
+    <div class="repeat-wrapper-pages" ng-show="toggleTab">
+      <input ng-model="storyData.body.title" class="input-model-subname" placeholder="Please Enter a Name"></input>
+      <!-- <text-area-dir></text-area-dir> -->
+      <div text-angular ng-model="storyData.body.text"></div>
+
+      <!-- <div text-angular ng-model="storyData.body.text" placeholder="Enter text here" ng-show="toggleTab"></div> -->
+    </div>
+    <div class="bottom-button-container">
+      <!-- <div class="new-button-container"> -->
+        <button  class="new-page-submit" ng-click="saveSections(storyData)" ng-show="toggleTab">Add</button>
+        <button class="new-page-submit" ng-show="toggleTab" ui-sref="home">Finish</button>
+            <!-- </div> -->
+  </div>
+  </div>
+</div>
+</div>
+<div class="spacer"></div>

@@ -1,0 +1,16 @@
+<header-dir></header-dir>
+
+<h1 class='menu-text'> This is a header. Hooray</h1>
+<br>
+<div ng-repeat="sel in selCat.story">
+  <!-- {{sel}} -->
+  <button class="view-change" ui-sref="wikipage({id: sel._id})">{{sel.name}}</button>
+</div>
+
+<input ng-model="categoryName.name"></input>
+<!-- <button ng-click="addCategory(categoryName)">Save Category</button> -->
+<!-- {{categoryName.name}} -->
+<input ng-model="updateCat"></input>
+<button ng-click="updateCategory(updateCat)">Update Category</button>
+
+<!-- <button ng-cllick="addToCat()">Add to Cat</button> -->

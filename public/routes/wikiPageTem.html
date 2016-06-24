@@ -1,0 +1,25 @@
+<!-- <div class="practice-box"></div>
+<div class="practice-box-holder"></div> -->
+<!-- <user-list></user-list> -->
+
+<header-dir></header-dir>
+
+<div class="right-column-wrapper">
+
+<h1 class="new-page-mainname">{{selStory.name}}</h1>
+
+<div class="repeat-wrapper-pages">
+  <div ng-repeat="story in selStory.body track by $index">
+    <br>
+      <h2 class="page-subname">{{story.title}}</h2>
+    <hr>
+    <div class="page-textdisplay" ta-bind ng-model="story.text"></div>
+  </div>
+</div>
+<br>
+<div class="bottom-button-container">
+  <button class="edit-option-button" ui-sref="edit({id: selStory._id})">Edit Page</button>
+</div>
+
+</div>
+<div class="spacer"></div>

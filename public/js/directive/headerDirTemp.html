@@ -1,0 +1,34 @@
+<div class="header">
+<div class="flex-container">
+    <!-- <div class="flex-image"></div> -->
+  <img class="flex-image" src="image/logotake6.jpg" alt="" />
+   <!-- <div class="border-right"></div> -->
+ </div>
+ <div class="logo-flex-container">
+   <img class="flex-image" src="image/idetiklogo3.jpg" alt="" />"
+ </div>
+  <!-- <p class ="logo">IDETIK </p> -->
+
+  <div class="span-wrapper">
+    <a class="header-link" ui-sref ='home'>Home</a>
+    <a class="header-link" ui-sref ='newpage'>New Page</a>
+    <a class="header-link" ui-sref='yourPages'>Your Pages</button>
+    <button class="button-header" ng-click="toggleMenu()">
+      <a class="header-link">Category
+    </button>
+    <button class="button-header" ng-click="logout()">
+      <a class="header-link" ui-sref='login'>Log Out</a>
+    </button>
+
+  </div>
+</div>
+<div class="category-holder" ng-show="toggleVisible">
+<div style="width:100vw">
+<div class="side-bar" style="display:inline-block"ng-repeat="prop in category track by $index">
+  <button ui-sref="menu({id: prop._id})">{{prop.name}}</button>
+</div>
+</div>
+<input ng-model="categoryName.name"></input>
+<button ng-click="addCategory(categoryName)">Add Category</button>
+  <button ng-click="toggleMenu()"></button>
+</div>

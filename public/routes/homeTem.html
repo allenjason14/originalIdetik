@@ -1,0 +1,34 @@
+<!-- {{user}} -->
+<!-- {{story}} -->
+
+<!-- <div>
+  <p></p>
+  <button></button>
+</div> -->
+  <header-dir></header-dir>
+
+    <div class="sub-header-main-display">
+      <input class="search-bar-home" ng-model="name" placeholder="Quick Search"></input>
+  </div>
+
+</div>
+
+<!-- {{user}} -->
+<!-- {{story}}-->
+ <!-- {{story.story}} -->
+
+<section class="home-repeat-container">
+  <div class="repeat-wrapper-home">
+    <button class="home-page-main-display" ui-sref="wikipage({id: prop._id})" ng-repeat="prop in story.story | filter:name track by $index | limitTo: 7">
+      <div>
+        <span class="name-display-home">{{prop.name}}</span>
+      </div>
+      <div>
+        <!-- <div class="home-preview">{{prop}}</div> -->
+        <div class="display-description" ta-bind ng-model="prop.body[0].text"> </div>
+        <!-- <button class="home-view-change" ui-sref="wikipage({id: prop._id})">View Page</button> -->
+      </button>
+    </div>
+  </div>
+</section>
+<div class="spacer"></div>

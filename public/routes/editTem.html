@@ -1,0 +1,39 @@
+<!-- <user-list></user-list> -->
+
+<header-dir></header-dir>
+
+<div class="right-column-wrapper">
+
+  <h1 class="new-page-mainname">{{selStory.name}}</h1>
+
+  <div>
+  <select class="select-cat" ng-model="addOptions.name">
+    <option ng-repeat="cat in category" value="{{cat._id}}">
+      {{cat.name}}
+    </option>
+</select>
+<button class="new-page-submit" ng-click="addCat()">Add to Category</button>
+</div>
+
+  <div class="repeat-wrapper-pages">
+    <div ng-repeat="story in selStory.body track by $index" ng-if="selStory">
+      <br>
+      <input class="input-model-subname" placeholder="{{story.title}}" ng-model="story.title"></input>
+      <br>
+      <div text-angular ng-model="story.text"></div>
+
+
+      <div class="edit-options">
+        <button class="edit-option-button" ng-click="addTab($index)">Add Tab</button>
+        <button class="edit-option-button" ng-click="removeTab($index)">Remove Tab</button>
+        <button class="edit-option-button" ng-click="shiftUp($index)">Shift Up</button>
+        <button class="edit-option-button" ng-click="shiftDown($index)">Shift Down</button>
+    </div>
+    </div>
+  </div>
+  <div class="bottom-button-container">
+      <button class="edit-option-button" class="bottom-button" ng-click="updateTab()" ui-sref="wikipage({id: selStory._id})">Finish</button>
+      <button class="edit-option-button"  class="bottom-button"ng-click="removePage()">Delete Page</button>
+</div>
+</div>
+<div class="spacer"></div>

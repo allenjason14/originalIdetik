@@ -1,0 +1,18 @@
+<header-dir></header-dir>
+
+<h1>These are your pages</h1>
+
+<div style="width:100vw">
+<div class="side-bar" style="display:inline-block"ng-repeat="prop in story.story track by $index">
+  <button ui-sref="wikipage({id: prop._id})">{{prop.name}}</button>
+</div>
+</div>
+
+<!-- <tr ng-repeat="prop in story.story | filter:getFiltered">
+    <!-- Current item, i.e first of every third item -->
+    <!-- <td>{{prop.text}}</td>
+    <!-- based on the _index property display the next 2 items (which have been already filtered out) -->
+    <!-- <td>{{story.story[prop._index+1].text}}</td>
+    <td>{{story.story[prop._index+2].text}}</td>
+  </tr> -->
+<!-- {{story.story}} -->
